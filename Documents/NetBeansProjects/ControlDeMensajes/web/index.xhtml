@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>Gerente</title>
+
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <meta name="viewport" content="width=device-width" />
+
+
+        <!-- Bootstrap core CSS     -->
+        <link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+        <!--  Material Dashboard CSS    -->
+        <link href="resources/css/estilos.css" rel="stylesheet" type="text/css"/>
+
+        <!--  CSS for Demo Purpose, don't include it in your project     -->
+        <link href="resources/css/demo.css" rel="stylesheet" type="text/css"/>
+
+        <!--     Fonts and icons     -->
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"></link>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'></link>
+
+
+        <!--   Core JS Files   -->
+        <script src="resources/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+        <script src="resources/js/material.min.js" type="text/javascript"></script>
+        <script src="resources/js/bootstrap.min.js" type="text/javascript"></script>
+        <!--  Charts Plugin -->
+        <script src="resources/js/chartist.min.js" type="text/javascript"></script>
+
+        <!--  Notifications Plugin    -->
+        <script src="resources/js/bootstrap-notify.js" type="text/javascript"></script>
+
+        <!--  Google Maps Plugin    -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+        <!-- Material Dashboard javascript methods -->
+        <script src="resources/js/script.js" type="text/javascript"></script>
+
+        <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+        <script src="resources/js/demo.js" type="text/javascript"></script>
+
+    </h:head>
+    <h:body>
+
+        <div class="wrapper">
+            <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
+                <!--
+                Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+                Tip 2: you can also add an image using data-image tag
+                -->
+
+                <div class="logo">
+                    <a href="http://www.creative-tim.com" class="simple-text">
+                        GERENTE
+                    </a>
+                </div>
+
+                <div class="sidebar-wrapper">
+                    <ul class="nav">
+
+                        <li class="active">
+                            <a href="index.xhtml">
+                                <i class="material-icons">Empleados</i>
+                                <p>Empleados</p>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="crear.xhtml">
+                                <i class="material-icons">Crearempleados</i>
+                                <p>Crear Empleado</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-panel">
+                <nav class="navbar navbar-transparent navbar-absolute">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">Lista de empleados</a>
+                        </div>
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="material-icons">notifications</i>
+                                        <span class="notification">3</span>
+                                        <p class="hidden-lg hidden-md">Notifications</p>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Se ah ingresado un empleado</a></li>
+                                        <li><a href="#">Se ah enviado un correo</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="material-icons">person</i>
+                                        <p class="hidden-lg hidden-md">Profile</p>
+                                        <li><a href="login_valido.html">Salir</a></li>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <form class="navbar-form navbar-right" role="search">
+                                <div class="form-group  is-empty">
+                                    <input type="text" class="form-control" placeholder="Search"></input>
+                                    <span class="material-input"></span>
+                                </div>
+                                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                    <i class="material-icons">search</i><div class="ripple-container"></div>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="content">
+                    <div class="container-fluid">
+                        <f:view>
+                            
+
+                            <h:form >
+                                
+                                
+                                <h:dataTable value="#{controllerUsuario.listausuario}" var="item" border="1">
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="IdUsuarios"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.idUsuarios}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Nombre"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.nombre}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Apellido"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.apellido}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Telefono"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.telefono}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Genero"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.genero}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Cargo"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.cargo}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Correo"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.correo}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Password"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.password}"/>
+                                    </h:column>
+                                </h:dataTable>
+                            </h:form>
+                        </f:view>
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <div class="container-fluid">
+
+                        <p class="copyright pull-right">Fixed Up
+                            &copy;2017
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+    </h:body>
+</html>
+

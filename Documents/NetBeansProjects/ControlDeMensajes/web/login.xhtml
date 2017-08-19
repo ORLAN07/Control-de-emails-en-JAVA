@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        
+        
+        
+        <link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+        <script src="resources/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="resources/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+       
+        <link href="resources/css/sweetalert.css" rel="stylesheet" type="text/css"></link>
+        
+
+        <meta charset="UTF-8"></meta>
+        <title>Acceso</title>
+        <link rel="stylesheet" href="css/login.css"></link>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+        <link href="resources/css/login.css" rel="stylesheet" type="text/css"></link>
+    </h:head>
+    <h:body>
+        
+        
+        <h:form>
+
+            <p>
+                <label>
+                    <h:inputText a:placeholder="email" a:type="email" value="#{controllerSession.email}" ></h:inputText>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <h:inputText a:placeholder="password" a:type="password" value="#{controllerSession.clave}"></h:inputText>  
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <h:commandButton action="#{controllerSession.iniciarSesion()}" value="iniciar sesion"></h:commandButton>
+                </label>
+            </p>
+
+            <a href="#">Olvido su Contraseña</a>
+
+        </h:form>
+        
+    </h:body>
+</html>
+
